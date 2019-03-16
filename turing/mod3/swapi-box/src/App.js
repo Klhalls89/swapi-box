@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import './App.scss';
 import Cardholder from './components/Cardholder'
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
       this.state = {
+        errorStatus: '',
         movie: {},
         people: [],
         places: [],
@@ -15,17 +16,34 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    this.getMovies()
+  }
+
+  getMovies(){
     const url = 'https://swapi.co/api/films/'
     fetch(url)
       .then(response => response.json())
       .then(films => this.assignMovie(films.results))
-      .catch(error => console.log(error.message))  
+      .catch(error => {
+        this.setState({
+          errorStatus: 'Error in fetch'
+        })
+      })  
+  }
+
+  assignMovie = (movies) => {
+    const ranMov = Math.floor(Math.random() * (7))
+    const movie = movies[ranMov]
+    this.setState ({
+      movie
+    })
   }
 
   getPeople = () => {
     const url = 'https://swapi.co/api/people/'
     fetch(url)
       .then(response => response.json())
+      .then(people => this.getPeopleSpecies(people))
       .then(people => this.setPeople(people.results))
       .catch(error => console.log(error.message))  
   }
@@ -39,20 +57,21 @@ class App extends Component {
   }
 
   getPeopleSpecies = (people) => {
-    console.log('getPeopleSpecies', people)
+    let peopleSpecies = people.results.map((person) => {
+      return  fetch(person.species)
+      .then(species => species.json())
+      .then(species => ({...person, species:species.name, language:species.language}))
+      // implicit return
+    })
+    console.log(peopleSpecies)
+    return Promise.all(peopleSpecies)
   }
 
   getPeoplePlanet = (people) => {
-    console.log('getPeoplePlanet', people)
+    // console.log('getPeoplePlanet', people)
   }
 
-  assignMovie = (movies) => {
-    const ranMov = Math.floor(Math.random() * (7))
-    const movie = movies[ranMov]
-    this.setState ({
-      movie
-    })
-  }
+
 
   render() {
    const {people} = this.state
