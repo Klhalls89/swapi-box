@@ -44,7 +44,8 @@ export class App extends Component {
     fetch(url)
       .then(response => response.json())
       .then(people => this.getPeopleSpecies(people))
-      .then(people => this.setPeople(people.results))
+      .then(people => this.getPeoplePlanet(people))
+      .then(people => this.setPeople(people))
       .catch(error => console.log(error.message))  
   }
 
@@ -58,20 +59,23 @@ export class App extends Component {
 
   getPeopleSpecies = (people) => {
     let peopleSpecies = people.results.map((person) => {
-      return  fetch(person.species)
+      return fetch(person.species)
       .then(species => species.json())
       .then(species => ({...person, species:species.name, language:species.language}))
-      // implicit return
+      .catch(error => console.log(error.message)) 
     })
-    console.log(peopleSpecies)
     return Promise.all(peopleSpecies)
   }
 
   getPeoplePlanet = (people) => {
-    // console.log('getPeoplePlanet', people)
+    let peoplePlanet = people.map((person) => {
+      return fetch(person.homeworld)
+      .then(homeworld => homeworld.json())
+      .then(homeworld =>({...person, homeworld:homeworld.name, population: homeworld.population}))
+      .catch(error => console.log(error.message))  
+    })
+    return Promise.all(peoplePlanet)
   }
-
-
 
   render() {
    const {people} = this.state
