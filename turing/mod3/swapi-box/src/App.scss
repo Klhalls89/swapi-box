@@ -1,13 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+
 .App {
   text-align: center;
+  display: grid;
+  grid-template-areas: "aside header"
+                      "aside cards";
+  grid-template-rows: 200px 1fr;
+  grid-template-columns: 1fr 4fr;
 }
 
 .App-header {
   color: white;
+  grid-area: header;
 }
 
 .logo {
-  color: gold;
+  color: goldenrod;
+}
+
+aside {
+  grid-area: aside;
+  padding: 5%;
+}
+
+.card-holder {
+  grid-area: cards;
 }
 
 button {

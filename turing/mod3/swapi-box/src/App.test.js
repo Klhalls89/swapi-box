@@ -23,29 +23,29 @@ describe( 'test app js', () => {
   describe( 'get movies', () => {
     let mockFilms;
 
-    it('should fetch movies', () => {
-      mockFilms = {results:[{},{}]}
+    it('should fetch movies', async () => {
+      wrapper.instance.assignMovie = jest.fn()
       window.fetch = jest.fn().mockImplementation(() =>  
         Promise.resolve({
           json: () => Promise.resolve({
-            films: mockFilms
+            results:[{},{}]
           })
         })
       )
-      wrapper.instance().getMovies()
+      await wrapper.instance().getMovies()
       expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/films/')
+      expect(wrapper.instance().assignMovie).toHaveBeenCalled()
     });
 
-    it('should throw an error if fetch fails', () => {
+
+    it('should throw an error if fetch fails', async () => {
         window.fetch = jest.fn().mockImplementation(() =>  
         Promise.reject (
           new Error('failed')
         )
       )
-        wrapper.instance().getMovies()
-        .then(() => {
+        await wrapper.instance().getMovies()
           expect(wrapper.state('errorStatus')).toEqual('Error in fetch')
-        })
     })
 
 

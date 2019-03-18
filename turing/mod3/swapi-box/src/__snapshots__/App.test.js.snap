@@ -42,17 +42,20 @@ ShallowWrapper {
             Vehicles
           </button>
         </header>,
+        <aside>
+          <h2
+            className="film-name"
+          />
+          <h2
+            className="release-date"
+          />
+          <p
+            className="movie-crawler"
+          />
+        </aside>,
         <Cardholder
+          className="cardholder"
           people={Array []}
-        />,
-        <h2
-          className="film-name"
-        />,
-        <h2
-          className="release-date"
-        />,
-        <p
-          className="movie-crawler"
         />,
       ],
       "className": "App",
@@ -152,49 +155,72 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2
+              className="film-name"
+            />,
+            <h2
+              className="release-date"
+            />,
+            <p
+              className="movie-crawler"
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "film-name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "release-date",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "movie-crawler",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
+          },
+        ],
+        "type": "aside",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "className": "cardholder",
           "people": Array [],
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-          "className": "film-name",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-          "className": "release-date",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-          "className": "movie-crawler",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "p",
       },
     ],
     "type": "div",
@@ -229,17 +255,20 @@ ShallowWrapper {
               Vehicles
             </button>
           </header>,
+          <aside>
+            <h2
+              className="film-name"
+            />
+            <h2
+              className="release-date"
+            />
+            <p
+              className="movie-crawler"
+            />
+          </aside>,
           <Cardholder
+            className="cardholder"
             people={Array []}
-          />,
-          <h2
-            className="film-name"
-          />,
-          <h2
-            className="release-date"
-          />,
-          <p
-            className="movie-crawler"
           />,
         ],
         "className": "App",
@@ -339,49 +368,72 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2
+                className="film-name"
+              />,
+              <h2
+                className="release-date"
+              />,
+              <p
+                className="movie-crawler"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "film-name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "release-date",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "movie-crawler",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+          ],
+          "type": "aside",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "className": "cardholder",
             "people": Array [],
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-            "className": "film-name",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-            "className": "release-date",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-            "className": "movie-crawler",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "p",
         },
       ],
       "type": "div",

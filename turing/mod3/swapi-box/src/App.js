@@ -88,10 +88,12 @@ export class App extends Component {
           <button>Places</button>
           <button>Vehicles</button>
         </header>
-        <Cardholder people={people}/> 
+        <aside>
           <h2 className="film-name">{this.state.movie.title}</h2>
           <h2 className="release-date">{this.state.movie.release_date}</h2>
           <p className="movie-crawler">{this.state.movie.opening_crawl}</p>
+        </aside>
+        <Cardholder className="cardholder" people={people}/> 
       </div>
     );
   }

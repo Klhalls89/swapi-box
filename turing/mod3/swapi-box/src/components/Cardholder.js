@@ -1,4 +1,5 @@
 import React from 'react';
+import './cardholder.scss';
 import Card from './Card'
 
 function Cardholder({people}) {
