@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.Scss'
+import './Card.scss'
 
 function Card(props) {
   let {name, homeworld, population, species, language} = props.person

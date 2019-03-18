@@ -1,8 +1,10 @@
 .card {
-  background-color: wheat;
   width: 250px;
+  background-color: wheat;
+  margin-top: 5%;
+  display: inline;
 }
 
 .card-header {
-  display: flex;
+  background-color: #fff;
 }

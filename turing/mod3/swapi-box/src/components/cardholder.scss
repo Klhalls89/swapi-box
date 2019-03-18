@@ -1,5 +1,7 @@
 .card-div {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
+  margin: auto;
+  grid-gap: 3%;
 }

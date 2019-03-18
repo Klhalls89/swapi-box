@@ -10,6 +10,8 @@
                       "aside cards";
   grid-template-rows: 200px 1fr;
   grid-template-columns: 1fr 4fr;
+  background-image: url('./bb8-patern.png')
+
 }
 
 .App-header {
@@ -22,6 +24,7 @@
 }
 
 aside {
+  background-color: lightgrey;
   grid-area: aside;
   padding: 5%;
 }
